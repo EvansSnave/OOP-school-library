@@ -1,3 +1,5 @@
+require_relative 'nameable'
+
 class Person
   def initialize(age, name = 'Unknown', parent_permision: true)
     @id = 0
