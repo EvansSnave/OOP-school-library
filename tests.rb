@@ -25,5 +25,5 @@ rental = Rental.new('2023-10-11', person1, book)
 
 puts "Rental date: #{rental.date}, person: #{rental.person.name}, book: #{rental.book.title}"
 
-puts "Rentals #{person1.rentals.map { |rentals| rentals.book.title}}"
-puts "Books rentals #{person1.rentals.map { |rentals| rentals.person.name}}"
+puts "Rentals #{person1.rentals.map { |rentals| rentals.book.title }}"
+puts "Books rentals #{person1.rentals.map { |rentals| rentals.person.name }}"
