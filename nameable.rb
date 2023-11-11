@@ -1,5 +1,5 @@
 class Nameable
   def correct_name
-    raise NotImplementedError, "'correct_name' has to be implemented"
+    raise NotImplementedError, "The 'correct_name' method should be implemented"
   end
 end
