@@ -5,81 +5,28 @@ class Main
     @app = App.new
   end
 
-  def create_a_teacher
-    print 'Age: '
-    age = gets.chomp
-    print 'Name: '
-    name = gets.chomp
-    print 'Specialization: '
-    specialization = gets.chomp
-    puts 'Person created successfully '
-    puts
-    @app.create_a_teacher(name, specialization, age)
-  end
-
-  def create_a_student
-    print 'Age: '
-    age = gets.chomp
-    print 'Name: '
-    name = gets.chomp
-    print 'Has parents permission ? [y/n]: '
-    permission = gets.chomp
-    puts 'Person created successfully '
-    puts
-    @app.create_a_student(name, age, permission)
-  end
-
-  def create_a_person
-    loop do
-      print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
-      option = gets.chomp
-
-      case option
-      when '1'
-        create_a_student
-        break
-      when '2'
-        create_a_teacher
-        break
-      else
-        puts 'Option unknown'
-      end
-    end
-  end
-
   def create_a_book
-    print 'Title: '
-    title = gets.chomp
-    print 'Author: '
-    author = gets.chomp
-    @app.create_a_book(title, author)
-    puts 'Book created successfully'
-    puts
+    @app.create_a_book
   end
 
   def create_a_rental
-    puts 'Select a book from the following list by number'
-    list_all_books(with_id: true)
-    book = gets.chomp
-    puts 'Select a person from the following list by number(not id)'
-    list_all_persons(with_id: true)
-    person = gets.chomp
-    print 'Date: '
-    date = gets.chomp
-    puts 'Rental created successfully'
-    puts
-    @app.create_a_rental(date, book.to_i, person.to_i)
+    @app.create_a_rental
   end
 
   def list_rental_person
-    print 'ID of person: '
-    id = gets.chomp
-    puts 'Rentals: '
-    rentals = @app.list_rental_person(id.to_i)
-    rentals&.each do |rental|
-      puts "Date: \"#{rental.date}\", Book: #{rental.person.title} by #{rental.person.author}"
-    end
-    puts
+    @app.list_rental_person
+  end
+
+  def create_person
+    @app.create_a_person
+  end
+
+  def list_all_books
+    @app.list_all_books
+  end
+
+  def list_all_persons
+    @app.list_all_persons
   end
 
   def menu
@@ -93,37 +40,11 @@ class Main
     puts '7 - Exit'
   end
 
-  def list_all_books(with_id: false)
-    if with_id
-      @app.list_all_books.each.with_index(0) do |book, idx|
-        puts "#{idx}) Title: \"#{book.title}\", Author: #{book.author}"
-      end
-    else
-      @app.list_all_books.each do |book|
-        puts "Title: \"#{book.title}\", Author: #{book.author}"
-      end
-    end
-    puts
-  end
-
-  def list_all_persons(with_id: false)
-    if with_id
-      @app.list_all_persons.each.with_index(0) do |person, idx|
-        puts "#{idx}) [#{person.class}] Name: \"#{person.name}\", ID: #{person.id}, Age: #{person.age}"
-      end
-    else
-      @app.list_all_persons.each do |person|
-        puts "[#{person.class}] Name: \"#{person.name}\", ID: #{person.id}, Age: #{person.age}"
-      end
-    end
-    puts
-  end
-
   def main
     puts 'Welcome to school library App!'
     puts
 
-    options = %i[list_all_books list_all_persons create_a_person create_a_book create_a_rental list_rental_person]
+    options = %i[list_all_books list_all_persons create_person create_a_book create_a_rental list_rental_person]
 
     loop do
       menu
