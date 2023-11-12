@@ -53,7 +53,7 @@ class App
     permission = gets.chomp
     puts 'Person created successfully '
     puts
-    self.create_a_student2(name, age, permission)
+    create_a_student2(name, age, permission)
   end
 
   def create_a_rental
@@ -72,11 +72,11 @@ class App
 
   def list_all_books(with_id: false)
     if with_id
-      self.list_all_books2.each.with_index(0) do |book, idx|
+      list_all_books2.each.with_index(0) do |book, idx|
         puts "#{idx}) Title: \"#{book.title}\", Author: #{book.author}"
       end
     else
-      self.list_all_books2.each do |book|
+      list_all_books2.each do |book|
         puts "Title: \"#{book.title}\", Author: #{book.author}"
       end
     end
@@ -85,11 +85,11 @@ class App
 
   def list_all_persons(with_id: false)
     if with_id
-      self.list_all_persons2.each.with_index(0) do |person, idx|
+      list_all_persons2.each.with_index(0) do |person, idx|
         puts "#{idx}) [#{person.class}] Name: \"#{person.name}\", ID: #{person.id}, Age: #{person.age}"
       end
     else
-      self.list_all_persons2.each do |person|
+      list_all_persons2.each do |person|
         puts "[#{person.class}] Name: \"#{person.name}\", ID: #{person.id}, Age: #{person.age}"
       end
     end
@@ -105,7 +105,7 @@ class App
     specialization = gets.chomp
     puts 'Person created successfully '
     puts
-    self.create_a_teacher2(name, specialization, age)
+    create_a_teacher2(name, specialization, age)
   end
 
   def create_a_person
@@ -130,7 +130,7 @@ class App
     print 'ID of person: '
     id = gets.chomp
     puts 'Rentals: '
-    rentals = self.list_rental_person2(id.to_i)
+    rentals = list_rental_person2(id.to_i)
     rentals&.each do |rental|
       puts "Date: \"#{rental.date}\", Book: #{rental.person.title} by #{rental.person.author}"
     end
