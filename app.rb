@@ -5,7 +5,7 @@ require_relative 'teacher'
 require_relative 'student'
 require_relative 'person'
 require_relative 'rental'
-require_relative 'book'
+require_relative 'create_books'
 
 class App
   def initialize
@@ -14,8 +14,8 @@ class App
     @rentals = []
   end
 
-  def list_all_books2
-    @books
+  def list_all_books(with_id = false)
+    ShowBooks.new.list_all_books(with_id, @books)
   end
 
   def list_all_persons2
@@ -28,20 +28,6 @@ class App
 
   def create_a_student2(name, age, parent_permission)
     @persons.push(Student.new(age, nil, name, parent_permission: parent_permission))
-  end
-
-  def create_a_book2(title, author)
-    @books.push(Book.new(title, author))
-  end
-
-  def create_a_book
-    print 'Title: '
-    title = gets.chomp
-    print 'Author: '
-    author = gets.chomp
-    create_a_book2(title, author)
-    puts 'Book created successfully'
-    puts
   end
 
   def create_a_student
@@ -58,10 +44,10 @@ class App
 
   def create_a_rental
     puts 'Select a book from the following list by number'
-    list_all_books(with_id: true)
+    list_all_books(with_id = true)
     book = gets.chomp
     puts 'Select a person from the following list by number(not id)'
-    list_all_persons(with_id: true)
+    list_all_persons(with_id = true)
     person = gets.chomp
     print 'Date: '
     date = gets.chomp
@@ -70,20 +56,11 @@ class App
     create_a_rental2(date, book.to_i, person.to_i)
   end
 
-  def list_all_books(with_id: false)
-    if with_id
-      list_all_books2.each.with_index(0) do |book, idx|
-        puts "#{idx}) Title: \"#{book.title}\", Author: #{book.author}"
-      end
-    else
-      list_all_books2.each do |book|
-        puts "Title: \"#{book.title}\", Author: #{book.author}"
-      end
-    end
-    puts
+  def create_a_book
+    CreateBooks.new.add_book(@books)
   end
 
-  def list_all_persons(with_id: false)
+  def list_all_persons(with_id = false)
     if with_id
       list_all_persons2.each.with_index(0) do |person, idx|
         puts "#{idx}) [#{person.class}] Name: \"#{person.name}\", ID: #{person.id}, Age: #{person.age}"

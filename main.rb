@@ -1,4 +1,5 @@
 require_relative 'app'
+require_relative 'menu'
 
 class Main
   def initialize
@@ -29,25 +30,12 @@ class Main
     @app.list_all_persons
   end
 
-  def menu
-    puts 'Please choose an option by entering a number: '
-    puts '1 - List all books'
-    puts '2 - List all people'
-    puts '3 - Create a person'
-    puts '4 - Create a book'
-    puts '5 - Create a rental'
-    puts '6 - List all rentals for a given person id'
-    puts '7 - Exit'
-  end
-
   def main
     puts 'Welcome to school library App!'
-    puts
-
     options = %i[list_all_books list_all_persons create_person create_a_book create_a_rental list_rental_person]
 
     loop do
-      menu
+      Menu.new.menu
       option = gets.chomp
       break if option == '7'
 
