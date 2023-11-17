@@ -7,9 +7,9 @@ class Person < Nameable
   attr_accessor :name, :age, :books, :rentals
   attr_reader :id
 
-  def initialize(age, name = 'Unknown', parent_permission: true)
+  def initialize(age, name = 'Unknown', id = nil, parent_permission: true)
     super(name)
-    @id = Random.rand(1..1000)
+    @id = id.nil? ? Random.rand(1..1000) : id
     @age = age
     @name = name
     @parent_permission = parent_permission
@@ -21,7 +21,6 @@ class Person < Nameable
     of_age? || @parent_permission
   end
 
-  # implement a method correct_name. It should simply return the name attribute.
   def correct_name
     @name
   end
@@ -38,7 +37,6 @@ class Person < Nameable
   end
 
   def add_rental(book, date)
-    # *The person itself should be sent as a parameter to create the new rental achieving the 'has-many' association
     Rental.new(date, book, self)
   end
 end
