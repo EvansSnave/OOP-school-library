@@ -113,7 +113,6 @@ class App
       File.open("json/#{file_name}", 'w') do |f|
         f.puts(json)
       end
-      puts "The array #{key} has been written to #{file_name}"
     end
   end
 
