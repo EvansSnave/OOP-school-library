@@ -13,7 +13,7 @@ class Store
         'id' => @id,
         'name' => @name,
         'age' => @age,
-        'parent-permission' => @parent-permission,
+        'parent_permission' => @parent_permission,
         'classroom' => @classroom
       }.to_json(*_args)
     when :teacher
@@ -22,7 +22,7 @@ class Store
         'id' => @id,
         'name' => @name,
         'age' => @age,
-        'parent-permission' => @parent-permission,
+        'parent_permission' => @parent_permission,
         'specialization' => @specialization
       }.to_json(*_args)
     when :book
@@ -52,7 +52,7 @@ class Store
         store.instance_variable_set(:@id, object['id'])
         store.instance_variable_set(:@name, object['name'])
         store.instance_variable_set(:@age, object['age'])
-        store.instance_variable_set(:@parent_permission, object['parent-permission'])
+        store.instance_variable_set(:@parent_permission, object['parent_permission'])
         store.instance_variable_set(:@classroom, object['classroom'])
       end
     when 'Teacher'
@@ -60,7 +60,7 @@ class Store
         store.instance_variable_set(:@id, object['id'])
         store.instance_variable_set(:@name, object['name'])
         store.instance_variable_set(:@age, object['age'])
-        store.instance_variable_set(:@parent_permission, object['parent-permission'])
+        store.instance_variable_set(:@parent_permission, object['parent_permission'])
         store.instance_variable_set(:@specialization, object['specialization'])
       end
     when 'Book'
