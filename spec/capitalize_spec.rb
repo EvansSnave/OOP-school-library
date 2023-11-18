@@ -1,9 +1,8 @@
 require 'rspec'
 require_relative '../lib/capitalizedecorator'
 
-
-let(:nameable) { double('Nameable', correct_name: 'John Doe') }
 describe CapitalizeDecorator do
+  let(:nameable) { double('Nameable', correct_name: 'John Doe') }
   subject { CapitalizeDecorator.new(nameable) }
 
   it 'capitalizes the correct_name' do

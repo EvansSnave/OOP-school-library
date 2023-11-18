@@ -1,9 +1,8 @@
 require 'rspec'
 require_relative '../lib/trimmerdecorator'
-
-let(:nameable) { double('Nameable', correct_name: 'John Doe') }
   
 describe TrimDecorator do
+  let(:nameable) { double('Nameable', correct_name: 'John Doe') }
   subject { TrimDecorator.new(nameable) }
 
   it 'trims the correct_name to 10 characters' do

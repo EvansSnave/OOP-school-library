@@ -1,9 +1,8 @@
 require 'rspec'
 require_relative '../lib/basedecorator'
 
-let(:nameable) { double('Nameable', correct_name: 'John Doe') }
-
 describe BaseDecorator do
+  let(:nameable) { double('Nameable', correct_name: 'John Doe') }
   subject { BaseDecorator.new(nameable) }
 
   it 'delegates correct_name to nameable' do
