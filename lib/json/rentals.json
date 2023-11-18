@@ -1,0 +1,1 @@
+[{"class":"Rental","date":"2020-09-09","person":{"class":"Teacher","name":"Math","id":93,"age":34,"parent_permission":true,"books":[],"rentals":["#<Rental:0x000002b983b8cf88>"],"specialization":"Joseph"},"book":{"class":"Book","title":"Book1","author":"Author1","rentals":["#<Rental:0x000002b983b8cf88>"]}}]

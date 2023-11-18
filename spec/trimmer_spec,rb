@@ -1,0 +1,11 @@
+require 'rspec'
+require_relative '../lib/trimmerdecorator'
+  
+describe TrimDecorator do
+  let(:nameable) { double('Nameable', correct_name: 'John Doe') }
+  subject { TrimDecorator.new(nameable) }
+
+  it 'trims the correct_name to 10 characters' do
+    expect(subject.correct_name).to eq('John Doe')
+  end
+end
