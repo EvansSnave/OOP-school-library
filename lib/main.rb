@@ -15,7 +15,7 @@ def main
 
   option_command = [
     'List all books', 'List all people',
-    'Create a person (student or teacher)',
+    'Create a person',
     'Create a book', 'Create a rental',
     'List all rentals for a given person ID', 'Exit'
   ]
