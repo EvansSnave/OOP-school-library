@@ -1,7 +1,10 @@
 <a id="readme-top"></a>
 
-<!-- TABLE OF CONTENTS -->
+<p align="center">
+  <img src="https://github.com/EvansSnave/OOP-school-library/assets/127534196/e1018826-48c0-4816-b267-7da07eacc860" width="200" height="200" title="hover text">
+</p>
 
+<!-- TABLE OF CONTENTS -->
 <details>
   <summary><h1>📗 Table of Contents</h1></summary>
   <ul>
