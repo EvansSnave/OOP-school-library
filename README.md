@@ -1,10 +1,7 @@
 <a id="readme-top"></a>
 
-<p align="center">
-  <img src="https://github.com/EvansSnave/OOP-school-library/assets/127534196/e1018826-48c0-4816-b267-7da07eacc860" width="200" height="200" title="hover text">
-</p>
-
 <!-- TABLE OF CONTENTS -->
+
 <details>
   <summary><h1>📗 Table of Contents</h1></summary>
   <ul>
@@ -21,7 +18,6 @@
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#install">Install</a></li>
         <li><a href="#usage">Usage</a></li>
-        <li><a href="#run-tests">Run tests</a></li>
         <li><a href="#deployment">Deployment</a></li>
       </ul>
     </li>
@@ -74,6 +70,44 @@ Before you begin, ensure you have met the following requirements:
    ```sh
    git clone https://github.com/evanssnave/oop-school-library.git
    ```
+   ### Install
+
+Install this project with:
+
+```sh
+  cd hello-rails-react2
+  bundle install
+```
+
+Setting up the Data Base:
+
+```sh
+  "Set up Username and password information in the config/database.yml"
+  rails db:create
+  rails db:migrate
+  rails db:seed
+```
+
+### Usage
+
+To run the project, execute the following command:
+
+```sh
+  ./bin/dev
+```
+
+### Deployment
+
+The deployment will be available soon !
+
+<!--
+Example:
+You can deploy this project using:
+
+```sh
+
+```
+ -->
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
