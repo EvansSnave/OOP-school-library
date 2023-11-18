@@ -1,0 +1,1 @@
+[{"class":"Teacher","name":"Joseph","id":93,"age":34,"parent_permission":true,"books":[],"rentals":["#<Rental:0x000001ef0f2e7b10>","#<Rental:0x0000022367c33e30>"],"specialization":"Math"}]
