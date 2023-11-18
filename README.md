@@ -1,5 +1,9 @@
 <a id="readme-top"></a>
 
+<p align="center">
+  <img src="https://github.com/EvansSnave/OOP-school-library/assets/127534196/5c7483dc-b2ae-4642-bf31-55877e4757af" width="200" height="200 title="hover text">
+</p>
+
 <!-- TABLE OF CONTENTS -->
 
 <details>
